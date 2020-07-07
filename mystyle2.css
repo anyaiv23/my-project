@@ -1,0 +1,40 @@
+.checkbox-label {
+ color: white;
+ background-color: red;
+ font-size: 20px;
+}
+
+.checkbox:checked + .checkbox-label {
+ background-color: red;
+ text-decoration: underline;
+}
+.checkbox-label1 {
+ color: white;
+ background-color: green;
+ font-size: 20px;
+}
+
+.checkbox1:checked + .checkbox-label1 {
+ background-color: green;
+ font-style: italic;
+}
+.checkbox-label2 {
+ color: white;
+ background-color: blue;
+ font-size: 20px;
+}
+
+.checkbox2:checked + .checkbox-label2 {
+ background-color: yellow;
+  color: black;
+}
+.checkbox-label3 {
+ color: white;
+ background-color: blueviolet;
+ font-size: 20px;
+}
+
+.checkbox3:checked + .checkbox-label3:after, .checkbox3:checked + .checkbox-label3:before {
+  background-color: blueviolet;
+  content: "~";
+}
