@@ -1,0 +1,21 @@
+div {
+  background-color: #000070;
+  overflow: hidden;
+}
+nav {
+  background-color: #4527a0;
+}
+.box{
+  font-size: 30px;
+  font-family: verdana;
+  padding: 20px;
+  margin: 0;
+  float: left;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.box:hover {
+  background-color: #7953d2;
+}
