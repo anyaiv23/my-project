@@ -1,5 +1,5 @@
 .rectangle1 {
-  position:absolute;
+  position: absolute;
   top: 300px;
   left: 500px;
   background-color: #8b9eaf;
@@ -9,9 +9,9 @@
   z-index: 3;
 }
 .rectangle2 {
-  position:absolute;
-  top: 325px;
-  left: 525px;
+  position: relative;
+  top: 317px;
+  left: 518px;
   background-color: #3b3e45;
   border: 5px solid black;
   width: 350px;
@@ -20,7 +20,7 @@
 }
 
 .rectangle3 {
-  position:absolute;
+  position: absolute;
   top: 170px;
   left: 525px;
   background-color: #8b9eaf;
@@ -30,7 +30,7 @@
   z-index: 1;
 }
 .rectangle4 {
-  position:absolute;
+  position: absolute;
   top: 200px;
   left: 550px;
   background-color: #8b9eaf;
@@ -40,7 +40,7 @@
   z-index: 1;
 }
 .rectangle5 {
-  position:absolute;
+  position: absolute;
   top: 60px;
   left: 600px;
   background-color: #fcba25;
@@ -50,7 +50,7 @@
   z-index: 1;
 }
 .rectangle6 {
-  position:absolute;
+  position: absolute;
   top: 60px;
   left: 750px;
   background-color: #fcba25;
@@ -59,46 +59,42 @@
 	height: 100px;
   z-index: 1;
 }
+.antenna {
+  background-color: #e63614;
+  width: 10px;
+	height: 70px;
+  z-index: 1;
+}
 .rectangle7 {
-  position:absolute;
+  position: absolute;
   top: 80px;
   left: 775px;
-  background-color: #e63614;
-  width: 10px;
-	height: 70px;
-  z-index: 1;
 }
+
 .rectangle8 {
-  position:absolute;
+  position: absolute;
   top: 80px;
   left: 625px;
-  background-color: #e63614;
-  width: 10px;
-	height: 70px;
-  z-index: 1;
+}
+.teeth {
+  background-color: white;
+  border: 5px solid black;
+  width: 45px;
+	height: 45px;
+  z-index: 4;
 }
 .square1 {
-  position:absolute;
-  top: 325px;
-  left: 640px;
-  background-color: white;
-  border: 5px solid black;
-  width: 45px;
-	height: 45px;
-  z-index: 4;
+  position: absolute;
+  top: -5px;
+  left: 110px;
 }
 .square2 {
-  position:absolute;
-  top: 325px;
-  left: 715px;
-  background-color: white;
-  border: 5px solid black;
-  width: 45px;
-	height: 45px;
-  z-index: 4;
+  position: absolute;
+  top: -5px;
+  left: 180px;
 }
 .square3 {
-  position:absolute;
+  position: absolute;
   background-color: black;
   width: 15px;
 	height: 15px;
@@ -107,7 +103,7 @@
   left: 770px;
 }
 .square4 {
-  position:absolute;
+  position: absolute;
   background-color: black;
   width: 15px;
 	height: 15px;
@@ -116,7 +112,7 @@
   left: 622px;
 }
 .circle1 {
-  position:absolute;
+  position: absolute;
   top: 205px;
   left: 580px;
   width: 80px;
@@ -128,7 +124,7 @@
 
 }
 .circle2 {
-  position:absolute;
+  position: absolute;
   top: 205px;
   left: 728px;
   width: 80px;
