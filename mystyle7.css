@@ -1,0 +1,131 @@
+
+html {
+    width: 1366px;
+    height: 950px;
+    background-color:#f9f9f9;
+}
+.maincontainer {
+    width: 1366x;
+    height: 950px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 154px;
+    background-color: #fff;
+}
+.firstcontainer {
+   width: 1060px;
+   height: 950px;
+   box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, .3);
+}
+.logo {
+width: 145px;
+height: 40px;
+margin-top: 50px;
+margin-left: 45px;
+}
+.nav {
+    display: inline-block;
+    font-size: 15px; 
+    width: 996px;
+    height: 40px;
+    background-image: linear-gradient(#444343, #5e5e5e);
+    margin-left: 46px;
+    margin-top: 30px;
+}
+.navlink1 {
+    color: white;
+    text-align: justify;
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 50px;
+    padding-left: 30px;
+    line-height: 40px;
+}
+.navlink1:hover {
+    background-image: linear-gradient(#2e2e2e, #4a4a4a);
+}
+.sidebar{
+    height: 240px;
+    width: 240px;
+    border: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    margin-left: 45px;
+    margin-top: 40px;
+    list-style-type: none;
+    color: #656363;
+    font-size: 13px;
+    float: left;
+}
+li {
+    height: 40px;
+    width: 240px;
+    border: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    margin-left: -40px;
+    padding-left: 22px;
+    vertical-align: middle;
+    line-height: 37px;
+}
+.sidelink {  
+    text-decoration: none;
+    color: inherit;
+}
+li:active{
+    background-color: #f9f9f9;
+    padding-left: 35px;
+}
+.content{
+    width: 678px;
+    height: 400px;
+    border: 1px solid #c8c8c8;
+    float: right;
+    margin-top: 40px;
+    margin-right: 48px;
+}
+.bike {
+    width: 500px;
+    height: 307px;
+    margin: 47px 89px 46px 89px;
+    position: absolute;
+}
+
+.text {
+    color: #2c2c2c;
+    font-size: 13px;
+    width: 625px;
+    height: 141px;
+    float:right;
+    margin-right: 77px;
+    margin-top: 39px;
+    line-height: 21px;
+}
+.footer {
+    clear: both;
+}
+.navfooter {
+    display: inline-block;
+    font-size: 13px; 
+    width: 996px;
+    height: 40px;
+    background-color: #e1e1e1;
+    margin-left: 46px;
+    margin-top: 70px;
+}
+.navlink2 {
+    color: #2c2c2c;
+    line-height: 40px;
+    text-align: justify;
+    text-decoration: none;
+    padding-left: 25px;
+    padding-right: 50px;
+    padding-top: 29px;
+}
+.navlink2:hover {
+text-decoration: underline;
+}
+.end {
+    float: right;
+    color: #2c2c2c;
+    line-height: 29px;
+    font-size: 13px;
+    margin-right: 26px;
+}
