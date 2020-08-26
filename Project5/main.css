@@ -679,6 +679,9 @@ background-color:  #4e485f;
 .footer-2 nav ul li a:hover{
   color:  black;
 }
+.footer-2 nav ul li a {
+  color: #8d81ac;
+}
 @media only screen and (min-width:800px){
   .container {
     min-width: 1380px;
