@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = {
+    admin: 'passw0rd',
+    moderator: 'm0derator',
+    user1: 'user1pass',
+    user2: 'user2pass',
+}
+const login = prompt ('Write your login');
+for (const key in users) {
+    const element = users[key];  
+    if (key == login) {
+     const   password = prompt ('Write your password');
+    if (password == users[key]){
+    alert ('Welcome home!');
+    break
+}
+    else if (password == '' || password == null){
+    alert ('Canceled');
+}
+    else {
+    alert ('Wrong password');
+    break
+    }
+}
+    else if (login =='' || login == null){
+    alert ('Canceled');
+    break
+}
+    /*else {
+    alert ('Access denied');
+    break 
+}*/
+}
+
+    </script>
+</body>
+</html>
