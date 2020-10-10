@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+}
+.slider {
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+   
+}
+.slide {
+    flex-shrink: 0;
+    transition: margin-left 300ms ease-out;
+   
+}
+.avatar {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+.avatar img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+.user {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.33;
+  text-align: left;
+  color: #474747;
+  margin-left: 1.2em;
+  margin-top: 0.5em;
+}
+.user span {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 2;
+  color: #8d81ac;
+}
+.user-comment {
+    font-family: 'Source Sans Pro';
+    font-size: 17px;
+    line-height: 1.41;
+    text-align: center;
+    color: #333333;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    margin-top: 2em;
+    margin-bottom: 1.1em;
+    position: relative;
+  }
+  .user-comment span {
+      color: #8d81ac;
+  }
+  .comment-time {
+      font-size: 16px;
+      line-height: 2;
+      text-align: center;
+      color: #848e97;
+  }
+  .slide-1 {
+      background-color: #e09cca8f;
+  }
+  .slide-2 {
+    background-color: #ae9ce08a;
+}
+.slide-3 {
+    background-color: #ec9696a1;
+}

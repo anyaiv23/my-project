@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="slider" data-timeout="2000" data-mode="loop">
+    <div class="slide slide-1">
+        <div class="avatar">
+            <img  src="usirpic.jpg" alt="useravatar"> 
+            <div class="user"> Steven Strange <br><span>@DoctorS</span>  </div>
+        </div>
+         <div class="user-comment"> 
+             <span>@Pixelbuddha</span> Suspendisse sodales sem est, in scelerisque felis scelerisque in. Aenean faucibus mollis risus. Praesent sit amet erat eget eros.</div>
+             <span class="comment-time">2 hours ago</span>
+     </div>
+     <div class="slide slide-2">
+        <div class="avatar">
+            <img  src="usirpic.jpg" alt="useravatar"> 
+            <div class="user"> Steven Strange <br><span>@DoctorS</span>  </div>
+        </div>
+         <div class="user-comment"> 
+             <span>@Pixelbuddha</span> Suspendisse sodales sem est, in scelerisque felis scelerisque in. Aenean faucibus mollis risus. Praesent sit amet erat eget eros.</div>
+             <span class="comment-time">2 hours ago</span>
+     </div>
+     <div class="slide slide-3">
+        <div class="avatar">
+            <img  src="usirpic.jpg" alt="useravatar"> 
+            <div class="user"> Steven Strange <br><span>@DoctorS</span>  </div>
+        </div>
+         <div class="user-comment"> 
+             <span>@Pixelbuddha</span> Suspendisse sodales sem est, in scelerisque felis scelerisque in. Aenean faucibus mollis risus. Praesent sit amet erat eget eros.</div>
+             <span class="comment-time">2 hours ago</span>
+     </div>
+    </div>
+
+
+    <script>
+        const body = document.getElementsByTagName('body')[0];
+        const div = document.body.getElementsByTagName('div')[0]
+        const slide = document.body.getElementsByClassName('slide')
+        console.log (slide.length)
+        const time = div.dataset.timeout;
+        const mode = div.dataset.mode;
+
+        const slide1 = document.getElementsByClassName('slide-1')[0];
+
+    const slider = document.getElementsByClassName('slider')[0];
+
+    console.log(slide1.offsetWidth);
+
+    slider.style.width = `${slide1.offsetWidth}px`;
+
+    let index = 1
+
+    if(mode === "loop"){
+     const intervalId = setInterval(() => {
+        slide1.style.marginLeft = `-${slide1.offsetWidth * index}px`
+        index++
+       if (index >= slide.length){
+          index = 0
+      }
+        }, time);
+    }
+    
+    else{
+        const intervalId = setInterval(() => {
+            slide1.style.marginLeft = `-${slide1.offsetWidth * index}px`
+        index++
+            if(index >= slide.length){
+                clearInterval(intervalId)
+            }
+        }, time);
+    }
+    </script>
+</body>
+</html>
