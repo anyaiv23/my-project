@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <div class="main-container">
     <div class="container">
         <header>
          <div class="logo logo-1">  
@@ -15,15 +16,16 @@
           </div>
          <div class="header-right-box">
           <nav>
-              <ul class="show-desktop hide-mobile">
+              <ul class="show-desktop hide-mobile" id= "nav">
                 <li><a href="#">Overwiev</a> </li>
                 <li><a href="#">About Work</a> </li>
                 <li><a href="#">Buying Options </a></li>
                 <li><a href="#">Support</a></li>
              </ul>
              <button>Buy now</button>   
-             <a href="#" class="hide-desktop">  </a> 
+             <a href="#" class="hide-desktop"> 
                  <i class="fa fa-bars" id="menu"></i>
+                </a> 
             </nav>  
           </div>     
         </header>      
@@ -263,6 +265,15 @@
             </div>
        </footer>
     </div>
-           
+</div>     
+
+<script>
+    const menu = document.getElementById('menu');
+    const nav = document.getElementById('nav');
+    menu.addEventListener('click', function(e){
+        nav.classList.toggle('hide-mobile');
+        e.preventDefault()
+    })
+</script>
 </body>
 </html>
