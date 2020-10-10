@@ -307,8 +307,9 @@ nav button {
 .colored-container {
   background-image: url(images/layer-1.png);
   background-color: #4b3b4e;
-  background-position: top;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .colored-container::after{
   content: "";
@@ -566,17 +567,16 @@ nav button {
 .title-news:hover{
   color: #323232;
 }
-.news-block::after{
+/*.news-block::after{
   content: "";
-  display: block;
+  display: inline-block;
   border: 1px solid #c7c7c7;
   width: 465px;
   height: 1px;
   opacity: 0.2;
-  background-color: #c7c7c7;
   margin-top: 60px;
   margin-left: -15px;
-}
+}*/
 footer {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -658,11 +658,11 @@ margin-top: 1.8em;
 .header-right-box ul {
   position: fixed;
   width: 60%;
-  top: 0;
-  right: 0;
-  text-align: left;
-  background: #302c3a;
   height: 100%;
+  top: 0;
+  left: 0;
+  text-align: left;
+  background: #26222e;
   z-index: 10;
   padding-top: 3em;
 }
@@ -696,6 +696,9 @@ background-color:  #4e485f;
   }
 .show-desktop {
   display: block;
+}
+.hide-desktop {
+  display: none;
 }
 .header-right-box nav ul {
   position: inherit;
@@ -840,11 +843,11 @@ margin: 40px 329px 13px 331px;
   opacity: 0.2;
   width: 780px;
   margin-left: 300px;
-  margin-bottom: 49px;
+  margin-bottom: 0px;
 }
 .pricing-container h1 {
   line-height: 1.25;
-  padding-top: 30px;
+  padding-top: 60px;
   margin-bottom: 120px;
 }
 .cards-type {
@@ -879,8 +882,8 @@ margin: 40px 329px 13px 331px;
   margin-right: 135px;
 }
 .news-block {
-  margin-left: 135px;
-  margin-right: 100px;
+  margin-left: 9.7%;
+  margin-right: 9.7%;
 }
 .news-column {
   margin-right: 50px;
@@ -894,6 +897,7 @@ margin: 40px 329px 13px 331px;
   line-height: 1.63;
   text-align: left;
   color: #8d81ac;
+  font-weight: bold;
 }
 .news-column p {
   font-size: 13px;
@@ -913,11 +917,11 @@ margin: 40px 329px 13px 331px;
 .column3 button {
   margin-top: 25px;
 }
-.news-block::after{
+/*.news-block::after{
   width: 1110px;
   margin-top: 70px;
   margin-left: 0;
-}
+}*/
 footer {
   margin-left: 135px;
   margin-right: 135px;
