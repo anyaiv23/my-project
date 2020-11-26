@@ -1,0 +1,96 @@
+body {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.signup-body{
+    background-image: url(bg6.jpg);
+}
+.create-body {
+    background-image: url(bg7.jpg);
+}
+.chat-body{
+    background-image: url(bg8.jpg);
+    height: 100vh;
+}
+.card {
+    max-width: 400px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+}
+.card-wrap{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-field label {
+    color: #ff8a80;
+  }
+  .input-field input[type=text]:focus + label {
+    color: #ff8a80;
+  }
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #ff8a80;
+  }
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+  }
+  .main-container {
+      display:flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+  }
+ .create-chat-container{
+   margin-top: 15%;
+  }
+  .btn {
+    margin-top: 20px;
+}
+.enter-chat-field {
+    display: flex;
+}
+.btn-floating {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.send-message-form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.usermessages {
+margin-left: 0%;
+color: rgb(80, 74, 74);
+border: solid rgb(190, 146, 146);
+border-radius: 30em;
+display: block;
+width: fit-content;
+padding: 5px;
+margin-bottom: 10px;
+}
+.mymessages {
+    margin-left: 80%;
+    color: rgb(80, 74, 74);
+    border: solid rgb(190, 146, 146);
+    border-radius: 45em;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 10px;
+    }
+
+.chat-container {
+    height: 75vh;
+    overflow: scroll;
+}
+
+.input-field {
+    position: absolute;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+</head>
+<body class="chat-body">
+    <div class="container">
+    <div class="chat-container">
+          <div class="card-messages">
+            <div  id = "messages">
+        
+        </div>
+    </div>
+    </div>
+        <div class="send-message-form">
+            <form id="enter-chat" class="card chat-card">
+                <div class="input-field">
+                 <input type = "text" id = "message" >
+                 
+                </div>
+                 <button class="btn waves-effect waves-light red lighten-3" id="send-button" type="submit">
+                      Send
+                     <i class="large material-icons">send</i>
+                 </button>
+            </form>
+        </div>
+    </div>
+
+        <script>
+const socket = new WebSocket("ws://simple-chat-demo.herokuapp.com");
+
+const accessToken = localStorage.getItem('access_token');
+const chatID = localStorage.getItem('chatID')
+const nickname = localStorage.getItem('nickname')
+socket.addEventListener("open", () => {
+  console.log("connection created");
+  socket.send(
+    JSON.stringify({
+      event: "enter",
+      data: {
+        token: `${accessToken}`,
+        connectId: chatID
+      }
+    })
+  );
+});
+const messagesContainer = document.getElementById("messages");
+
+/*socket.addEventListener("message", (res) => {
+  const data = JSON.parse(res.data);
+  if (data.data.message) {
+    const message = data.data.message;
+    messagesContainer.append(message);
+  }
+});*/
+
+document.getElementById("enter-chat").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  socket.send(
+    JSON.stringify({
+      event: "message",
+      data: {
+        message: this.elements["message"].value,
+        token: `${accessToken}`,
+        connectId: chatID
+      }
+    })
+  );
+});
+
+socket.onmessage = (res) => {
+        const data = JSON.parse(res.data);
+
+      let recmessage =  data.data.message
+      let nickmessage =  data.data.nickname
+      console.log (data.data.nickname)
+      let messageElem = document.createElement('div');
+      if (nickmessage === nickname){
+        messageElem.classList.add('mymessages');
+        messageElem.textContent = `${recmessage}: ${nickmessage}`;
+      }else {
+        messageElem.classList.add('usermessages');
+        messageElem.textContent = `${nickmessage}: ${recmessage}`;
+      }  
+     document.getElementById('messages').prepend(messageElem);
+
+    };
+
+
+fetch('https://simple-chat-demo.herokuapp.com/chat/2200', {
+    method: "GET",
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    }
+})
+.then(res => res.json())
+.then((data) => {
+    console.log (data)
+  /*let hismessage =  data.message
+      let hisnickmessage =  data.nickname
+      console.log (hismessage, hisnickmessage)
+      let hismessageElem = document.createElement('div');
+     hismessageElem.textContent = `${hismessage}: ${hisnickmessage}`;
+     document.getElementById('messages').append(hismessageElem);*/
+   })
+
+        </script>

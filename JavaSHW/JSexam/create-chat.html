@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="create-body">
+    <nav class="">
+        <div class=""></div>
+    </nav>
+
+    <div class="main-container">
+        <div class="create-chat-container">
+            <form class="card enter-chat-field" >
+                <div class="input-field ">
+                    <input type="text" id="chat-enter" class="validate" required placeholder="XXXX" maxlength="4" value=""> 
+                    <label for="chat-enter" class="active">
+                        Enter chat
+                    </label>
+                </div>
+                <button class="btn-floating red lighten-3" type="submit" id="send-button">
+                    <i class="large material-icons">send</i>
+                </button>
+            </form>
+            <div>OR</div>
+            <button class="btn waves-effect waves-light red lighten-3" id="create-new-chat">
+                <i class="material-icons">add</i>
+                                "Create New Chat"
+            </button>
+        </div>
+    </div>
+
+    <script>
+      const socket = new WebSocket("ws://simple-chat-demo.herokuapp.com");
+ function createChat (accessToken, cb){
+           return fetch('https://simple-chat-demo.herokuapp.com/chat', {
+    method: "POST",
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    }
+})
+.then(res => res.json())
+.then((data) => {
+   console.log(data)
+    localStorage.setItem('connectedID', data.connectId);
+    cb?.()
+})
+        }
+document.querySelector('#create-new-chat').addEventListener('click', function(e){
+    e.preventDefault()
+    const accessToken = localStorage.getItem('access_token');
+        if (accessToken) {
+            createChat(accessToken, () => {
+                window.location.href = 'chat.html'
+            })
+        }
+ 
+})
+
+function getchatID(){
+    const chatID = document.querySelector('#chat-enter').value
+console.log(chatID)
+localStorage.setItem('chatID', chatID)
+}
+document.querySelector('#send-button').addEventListener('click', function(e){
+    e.preventDefault()
+    getchatID()
+    window.location.href = 'chat2.html'
+    socket.send(JSON.stringify({
+        event: 'enter',
+        data: {
+            token: `${accessToken}`,
+            connectId: chatID
+        }
+    }))
+    ;})
+
+/*document.querySelector('#send-button').addEventListener('click', function(e){
+    window.location.href = 'chat2.html'
+socket.send(JSON.stringify({
+        event: 'enter',
+        data: {
+            token: `${accessToken}`,
+            connectId: chatID
+        }
+    }))
+   
+})*/
+
+    </script>
+</body>
+</html>
