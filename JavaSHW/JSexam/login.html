@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet"  href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
+
 <body class="signup-body">
-    <div class="card-wrap">
+  <div class="card-wrap">
     <div class="card">
-        <h4 class="center-align">Login</h4>
-        <form class="col s12" id="login-form">
+      <h4 class="center-align">Login</h4>
+      <form class="col s12" id="login-form">
         <div class="row">
-            <div class="col input-field s12">
-          <input type="text" class="validate" id="nickname" required>
-          <label for="nickname" class="active">Nickname</label>
+          <div class="col input-field s12">
+            <input type="text" class="validate" id="nickname" required>
+            <label for="nickname" class="active">Nickname</label>
+          </div>
         </div>
-         </div>
-         <div class="row">
-            <div class="col input-field s12">
-          <input type="password" class="validate" id="password" required>
-          <label for="password" class="active">Password</label>
+        <div class="row">
+          <div class="col input-field s12">
+            <input type="password" class="validate" id="password" required>
+            <label for="password" class="active">Password</label>
+          </div>
         </div>
-         </div>
-         <div class="row">
-            <div class="col s12">
-         <button class="btn waves-effect waves-light red lighten-3" type="submit">Login</button>
+        <div class="row">
+          <div class="col s12">
+            <button class="btn waves-effect waves-light red lighten-3" type="submit">Login</button>
+          </div>
         </div>
-         </div>
-         <div class="row">
-            <div class="col s12">
-                Don't have account? Please
-                <a href="signup.html">sign-up</a>
+        <div class="row">
+          <div class="col s12">
+            Don't have account? Please
+            <a href="signup.html">sign-up</a>
+          </div>
         </div>
-         </div>
       </form>
     </div>
-    </div>
-    <script>
-function login(nickname, password){
-                return fetch('https://simple-chat-demo.herokuapp.com/auth/login', {
-                 method: "POST",
-                 headers: {
-                   'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(
-        {
-           nickname, password
+  </div>
+  <script>
+    function login(nickname, password) {
+      return fetch('https://simple-chat-demo.herokuapp.com/auth/login', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+          {
+            nickname, password
+          }
+        )
+      })
+        .then((response) => response.json())
+
+    }
+
+    document.querySelector('#login-form')?.addEventListener('submit', function (e) {
+      e.preventDefault()
+      const nickname = this.elements['nickname'].value;
+      const password = this.elements['password'].value;
+      login(nickname, password).then(res => {
+        if (res.access_token) {
+          console.log(res.access_token)
+          localStorage.setItem('access_token', res.access_token);
+          localStorage.setItem('nickname', nickname);
+          window.location.href = 'create-chat.html'
         }
-    )
-})
-                    .then((response) => response.json())
-                    
-}
+      }
+      )
+    })
 
-document.querySelector('#login-form')?.addEventListener('submit', function(e){
-            e.preventDefault()
-            const nickname = this.elements['nickname'].value;
-            const password = this.elements['password'].value;
-            login(nickname, password).then(res => {
-                    if (res.access_token) {
-                      console.log(res.access_token)
-                        localStorage.setItem('access_token', res.access_token);
-                        localStorage.setItem('nickname', nickname);
-                       window.location.href = 'create-chat.html'
-                    }
-            }
-)})
-
-    </script>
+  </script>
 </body>
+
 </html>
