@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="signup-body">
+    <div class="card-wrap">
+         <div class="card">
+           <h4 class="center-align">Sign-Up</h4>
+            <form class="col s12" id="sign-up-form">
+                 <div class="row">
+                     <div class="col input-field s12">
+                         <input type="text" class="validate" id="nickname" required>
+                         <label for="nickname" class="active">Nickname</label>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col input-field s12">
+                         <input type="password" class="validate" id="password" required>
+                         <label for="password" class="active">Password</label>
+                      </div>
+                </div>
+                 <div class="row">
+                    <div class="col s12">
+                       <button class="btn waves-effect waves-light red lighten-3" type="submit">Sign-Up</button>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col s12">
+                      Already have account? Please
+                         <a href="login.html">login</a>
+                     </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+          function signUp(nickname, password){
+                return fetch('https://simple-chat-demo.herokuapp.com/auth/sign-up', {
+                 method: "POST",
+                 headers: {
+                   'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(
+        {
+           nickname, password
+        }
+    )
+})
+.then((response) => response.json())
+}
+        document.querySelector('#sign-up-form')?.addEventListener('submit', function(e){
+            e.preventDefault()
+            const nickname = this.elements['nickname'].value;
+            const password = this.elements['password'].value;
+
+            signUp(nickname, password).then(res => {
+                if (res.access_token) {
+                        localStorage.setItem('access_token', res.access_token);
+                        window.location.href = 'login.html'
+                    }
+    return res.json();
+})
+.then((data) => {
+    console.log(data);
+})
+}
+        )
+    </script>
+</body>
+</html>
