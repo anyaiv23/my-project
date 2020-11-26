@@ -103,12 +103,12 @@ fetch('https://simple-chat-demo.herokuapp.com/chat/2200', {
 .then(res => res.json())
 .then((data) => {
     console.log (data)
-  /*  let recmessage =  data.data.message
-      let nickmessage =  data.data.nickname
-      console.log (recmessage, nickmessage)
-      let messageElem = document.createElement('div');
-     messageElem.textContent = `${recmessage}: ${nickmessage}`;
-     document.getElementById('messages').prepend(messageElem);*/
+  /*let hismessage =  data.message
+      let hisnickmessage =  data.nickname
+      console.log (hismessage, hisnickmessage)
+      let hismessageElem = document.createElement('div');
+     hismessageElem.textContent = `${hismessage}: ${hisnickmessage}`;
+     document.getElementById('messages').append(hismessageElem);*/
    })
 
         </script>
